@@ -50,3 +50,18 @@ yarn web
 
 > install and use **Expo Client**, scan the metro bundler QR code, then view the app, shake the device to open React-native dev menu. (I contantly press **S** simply on my bluestack's Expo client to open dev menu)
 > please make sure your device and host machine are connected on the same network, WI-FI or via USB.
+
+## Publishing with Eas
+
+> expo-cli is no longer used to public expo apps, instead use "EAS"
+
+```bash
+npm install -g eas-cli
+```
+
+> Go to [Expo](https://expo.dev) create account, then return to project directory
+
+```bash
+npx eas login
+npx eas update # OR eas update --branch main --message "Initial release"
+```
