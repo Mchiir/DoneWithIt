@@ -16,24 +16,19 @@ const Tab = createBottomTabNavigator()
 
 function HomeStack() {
   return (
-    // <NavigationContainer>
     <Stack.Navigator initialRouteName='Home'>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Details" component={DetailsScreen} />
-      {/* <Stack.Screen name="Profile" component={ProfileScreen} /> */}
     </Stack.Navigator>
-    // </NavigationContainer>
   )
 }
 
 function TabNavigator() {
   return (
-    // <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="HomeTab" component={HomeStack} options={{ title: "Home" }} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
-    // </NavigationContainer>
   )
 }
 
