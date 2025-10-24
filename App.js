@@ -8,7 +8,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeScreen from './screens/HomeScreen'
 import DetailsScreen from './screens/DetailsScreen'
 import ProfileScreen from './screens/ProfileScreen'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 
+const Drawer = createDrawerNavigator()
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
 
@@ -24,13 +26,24 @@ function HomeStack() {
   )
 }
 
-export default function App() {
+function TabNavigator() {
   return (
-    <NavigationContainer>
+    // <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="HomeTab" component={HomeStack} options={{ title: "Home" }} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
+    // </NavigationContainer>
+  )
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Main" component={TabNavigator} />
+        <Drawer.Screen name="Profile" component={ProfileScreen} />
+      </Drawer.Navigator>
     </NavigationContainer>
   )
 }
